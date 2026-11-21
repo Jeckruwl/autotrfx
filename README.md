@@ -10,6 +10,12 @@ Pagina statica per catalogare manualmente un export Telegram. Non si collega a T
 4. Le scorciatoie iniziali sono **1, 2, 3, 4, 5, 6, 7**. Puoi cambiarle nelle impostazioni cliccando sulla casella della categoria e premendo un tasto. Le frecce navigano tra i messaggi e **Esc** riapre le impostazioni; c'è anche il pulsante a forma di ingranaggio.
 5. Nelle impostazioni puoi esportare un **backup JSON** o ripristinarlo su un altro dispositivo. Ripristinare un backup sostituisce immediatamente il database locale. Se reimporti gli stessi HTML, le classificazioni vengono mantenute; file diversi non sovrascrivono automaticamente il database esistente.
 
+### Esportazione da una data
+
+Nelle impostazioni, sotto **Backup e allegati**, scegli il giorno e premi **Scarica JSON filtrato**. La data è inclusa: il file contiene solo messaggi con data riconoscibile uguale o successiva al giorno scelto, confrontando le date originali dell’export senza conversioni di fuso orario. I messaggi senza data o con data non riconosciuta (anche eventi di servizio) sono esclusi, perché non è possibile stabilire se siano precedenti; la pagina ne mostra il numero. Sono riconosciute le date italiane dell’export, come `11 novembre 2022, 10:03:21`.
+
+L’esportazione non modifica né elimina nulla nel browser. Nel JSON filtrato le posizioni vengono rinumerate da 1, mentre ID, testo e categorie restano invariati. Ripristinare anche questo file sostituisce tutto il database locale con i soli messaggi esportati: prima conserva un **backup completo**. Se nessun messaggio corrisponde, non viene scaricato alcun file.
+
 Facoltativamente, in impostazioni scegli **Seleziona cartella allegati** e indica la cartella completa dell'export per visualizzare gli allegati disponibili. Devi selezionarla nuovamente dopo aver chiuso la pagina. Alcuni browser potrebbero non supportare la selezione di cartelle.
 
 ## Salvataggio e privacy
